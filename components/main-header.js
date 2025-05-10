@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import logoImg from "@/assets/logo.png";
 import classes from "./main-header.module.css";
@@ -7,7 +8,14 @@ export default function MainHeader() {
   return (
     <header className={classes.header}>
       <Link className={classes.logo} href='/'>
-        <img src={logoImg.src} alt='A plate with food on it' />
+        {/* 
+        optimized image: 
+        - lazy loading (loading="lazy")
+        - automatic image size detection (width="1024" height="1024")
+        - different image size depending on device and viewport (srcset="")
+        - priority: if image MUST be rendered
+         */}
+        <Image src={logoImg} alt='A plate with food on it' priority/>
         NextLevel Food
       </Link>
 
