@@ -15,8 +15,6 @@ export default function ImagePicker({ label, name }) {
   function handleImageChange(event) {
     const file = event.target.files[0];
 
-    console.log(file);
-
     if (!file) {
       setPickedImage(null);
       return;
